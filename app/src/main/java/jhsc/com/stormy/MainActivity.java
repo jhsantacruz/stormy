@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
   }
 
   private void getForecast() {
-    String apiKey = "f94e2ade3cc028be8c2475f69cbf7eb1";
+    String apiKey = Setting.FORECAST_API_KEY;
     double latitude = 33.9830556;
     double longitude = -118.0958333;
 
