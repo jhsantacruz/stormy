@@ -1,5 +1,6 @@
 package jhsc.com.stormy;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -7,6 +8,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -52,6 +55,9 @@ public class MainActivity extends Activity {
 
 
     mProgressBar.setVisibility(View.INVISIBLE);
+    ActionBar actionBar =  getActionBar();
+    actionBar.setDisplayShowHomeEnabled(false);
+    actionBar.setDisplayShowTitleEnabled(false);
 
     mRefreshImageView.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -184,5 +190,26 @@ public class MainActivity extends Activity {
   private void alertUserABoutError() {
     AlertDialogFragment dialog = new AlertDialogFragment();
     dialog.show(getFragmentManager(), "error_dialog");
+  }
+
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    // Inflate the menu; this adds items to the action bar if it is present.
+    getMenuInflater().inflate(R.menu.menu_main, menu);
+    return true;
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    // Handle action bar item clicks here. The action bar will
+    // automatically handle clicks on the Home/Up button, so long
+    // as you specify a parent activity in AndroidManifest.xml.
+
+    switch (item.getItemId()){
+      case R.id.action_settings:
+      return true;
+    }
+    return super.onOptionsItemSelected(item);
   }
 }
