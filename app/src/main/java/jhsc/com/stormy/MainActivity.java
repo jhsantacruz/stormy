@@ -13,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
@@ -47,6 +49,7 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.inject(this);
+
 
     mProgressBar.setVisibility(View.INVISIBLE);
 
@@ -135,6 +138,10 @@ public class MainActivity extends Activity {
 
   private void updateDisplay() {
     mTemperatureLabel.setText(mCurrentWeather.getTemperature() + "");
+    YoYo.with(Techniques.RubberBand)
+            .duration(700)
+            .playOn(findViewById(R.id.temperatureLabel));
+
     mTimeLabel.setText("At " + mCurrentWeather.getFormattedTime() + " it will be");
     mHumidityValue.setText(mCurrentWeather.getHumidity() + "");
     mPrecipValue.setText(mCurrentWeather.getPrecipChance() + "%");
