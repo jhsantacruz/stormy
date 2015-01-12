@@ -102,7 +102,7 @@ public class MainActivity extends Activity {
           try {
             String jsonData = response.body().string();
 
-            Log.v(TAG, jsonData);
+//            Log.v(TAG, jsonData);
             if (response.isSuccessful()) {
               mCurrentWeather = getCurrentDetails(jsonData);
               runOnUiThread(new Runnable() {
