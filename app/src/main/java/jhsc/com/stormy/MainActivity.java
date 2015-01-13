@@ -204,6 +204,8 @@ public class MainActivity extends Activity {
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()){
       case R.id.action_settings:
+      //Open the Menu Activity()
+      //Save the settings.
       return true;
     }
     return super.onOptionsItemSelected(item);
