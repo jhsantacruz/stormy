@@ -1,13 +1,12 @@
-package jhsc.com.stormy;
+package jhsc.com.stormy.weather;
 
 /**
- * Created by xmortumx on 3/16/15.
+ * Created by jhsantacruz on 3/16/15.
  */
-public class Day {
-
+public class Hour {
   private long mTime;
   private String mSummary;
-  private double mTemperatureMax;
+  private double mTemperature;
   private String mIcon;
   private String mTimezone;
 
@@ -27,12 +26,12 @@ public class Day {
     mSummary = summary;
   }
 
-  public double getTemperatureMax() {
-    return mTemperatureMax;
+  public double getTemperature() {
+    return mTemperature;
   }
 
-  public void setTemperatureMax(double temperatureMax) {
-    mTemperatureMax = temperatureMax;
+  public void setTemperature(double temperature) {
+    mTemperature = temperature;
   }
 
   public String getIcon() {
